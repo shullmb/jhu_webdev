@@ -3,7 +3,7 @@
 The overall goal of the assignment is to write a Ruby class and work with
 attributes, methods, hashes, and arrays.
 
-The functional goal of the assignment is to read some text from a file and find the word or words that appear the most in a line across all lines in the file. The way we are instructed to measure "the words that appear the most" is by 
+The functional goal of the assignment is to read some text from a file and find the word or words that appear the most in a line in the file. The way we are instructed to measure "the words that appear the most" is by 
 
     1. finding the highest frequency word(s) in each line
     2. finding lines in the file whose "highest frequency words" 
@@ -55,9 +55,9 @@ of your solution.
     $ gem install rspec-its
     ```
 
-3. Run the rspec command to execute the unit tests within the spec
-directory. This command should be run from the root directory of the
-project. This should result in several failures until you complete your
+3. Run the rspec command from the project root directory (i.e., `student-start` directory) 
+to execute the unit tests within the spec directory. This command should be run from the root 
+directory of the project. This should result in several failures until you complete your
 solution in module2_assignment2.rb.
 
     ```shell
@@ -116,9 +116,9 @@ with this exact name.
 
 8. Implement the following read-only attributes in the Solution
 class. The grader will look for accessor methods with these exact names.
-    * analyzers - an array that will hold LineAnalyzers for every line of the input text file
+    * analyzers - an array that will hold a LineAnalyzer for each line of the input text file
     * highest_count_across_lines - a number with the value of the highest frequency of a word
-    * highest_count_words_across_lines - an array with the words with the highest frequency
+    * highest_count_words_across_lines - an array of LineAnalyzers with the words with the highest frequency
 
 9. Implement the following methods in the Solution class. The grader will 
 look for methods with these exact names.
@@ -137,10 +137,11 @@ look for methods with these exact names.
     * Create an array of LineAnalyzers for each line in the file
 
 12. Implement the calculate_line_with_highest_frequency() method to:
-    * calculate the highest number of occurences of a word in a line across all lines
-    and stores this result in the highest_count_across_lines attribute.
-    * identifies the word(s) that were used with the highest number of occurrences
-    and stores them in print_highest_word_frequency_across_lines.
+    * calculate the maximum value for highest_wf_count contained by the LineAnalyzer objects in the analyzers array 
+    and store this result in the highest_count_across_lines attribute.
+    * identify the LineAnalyzer object(s) in the analyzers array that have the highest_wf_count equal to the
+    highest_count_across_lines attribute value found in the previous step and store them in
+    highest_count_words_across_lines attribute.
 
 13. Implement the print_highest_word_frequency_across_lines() method to
     * print the result in the following format
@@ -172,15 +173,8 @@ will replace the spec files will fresh copies and will perform a test
 with a different test.txt.
 
 ```text
---- student-start  
-  |-- .rspec (important hidden file)
-  |-- module2_assignment.rb
-  |-- solution.rb
-  |-- spec
-  |   |-- line_analyzer_spec.rb
-  |   |-- solution_spec.rb
-  |   `-- spec_helper.rb
-  `-- test.txt
+|-- module2_assignment.rb
+`-- solution.rb
 ```
 
-#### Updated: 2015-09-19
+#### Updated: 2015-10-10a

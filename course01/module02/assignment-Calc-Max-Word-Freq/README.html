@@ -1,6 +1,6 @@
 <h2 id="assignment-for-module-2-calculate-maximum-word-frequency">Assignment for Module #2: Calculate Maximum Word Frequency</h2>
 <p>The overall goal of the assignment is to write a Ruby class and work with attributes, methods, hashes, and arrays.</p>
-<p>The functional goal of the assignment is to read some text from a file and find the word or words that appear the most in a line across all lines in the file. The way we are instructed to measure &quot;the words that appear the most&quot; is by</p>
+<p>The functional goal of the assignment is to read some text from a file and find the word or words that appear the most in a line in the file. The way we are instructed to measure &quot;the words that appear the most&quot; is by</p>
 <pre><code>1. finding the highest frequency word(s) in each line
 2. finding lines in the file whose &quot;highest frequency words&quot; 
    is the greatest value among all lines.</code></pre>
@@ -41,7 +41,7 @@
 <li><p>Install the following gem. You may already have it installed.</p>
 <pre class="shell"><code>$ gem install rspec
 $ gem install rspec-its</code></pre></li>
-<li><p>Run the rspec command to execute the unit tests within the spec directory. This command should be run from the root directory of the project. This should result in several failures until you complete your solution in module2_assignment2.rb.</p>
+<li><p>Run the rspec command from the project root directory (i.e., <code>student-start</code> directory) to execute the unit tests within the spec directory. This command should be run from the root directory of the project. This should result in several failures until you complete your solution in module2_assignment2.rb.</p>
 <pre class="shell"><code>$ rspec
 
 FFFFFFFFFFFFFFFFF
@@ -89,9 +89,9 @@ Finished in 0.04955 seconds (files took 0.10746 seconds to load)
 <li><p>Implement a class called Solution. The grader will look for a class with this exact name.</p></li>
 <li>Implement the following read-only attributes in the Solution class. The grader will look for accessor methods with these exact names.
 <ul>
-<li>analyzers - an array that will hold LineAnalyzers for every line of the input text file</li>
+<li>analyzers - an array that will hold a LineAnalyzer for each line of the input text file</li>
 <li>highest_count_across_lines - a number with the value of the highest frequency of a word</li>
-<li>highest_count_words_across_lines - an array with the words with the highest frequency</li>
+<li>highest_count_words_across_lines - an array of LineAnalyzers with the words with the highest frequency</li>
 </ul></li>
 <li>Implement the following methods in the Solution class. The grader will look for methods with these exact names.
 <ul>
@@ -111,8 +111,8 @@ Finished in 0.04955 seconds (files took 0.10746 seconds to load)
 </ul></li>
 <li>Implement the calculate_line_with_highest_frequency() method to:
 <ul>
-<li>calculate the highest number of occurences of a word in a line across all lines and stores this result in the highest_count_across_lines attribute.</li>
-<li>identifies the word(s) that were used with the highest number of occurrences and stores them in print_highest_word_frequency_across_lines.</li>
+<li>calculate the maximum value for highest_wf_count contained by the LineAnalyzer objects in the analyzers array and store this result in the highest_count_across_lines attribute.</li>
+<li>identify the LineAnalyzer object(s) in the analyzers array that have the highest_wf_count equal to the highest_count_across_lines attribute value found in the previous step and store them in highest_count_words_across_lines attribute.</li>
 </ul></li>
 <li>Implement the print_highest_word_frequency_across_lines() method to
 <ul>
@@ -130,13 +130,6 @@ Finished in 0.02748 seconds (files took 0.16322 seconds to load)
 19 examples, 0 failures</code></pre>
 <h3 id="submission">Submission</h3>
 <p>Submit an .zip archive (other archive forms not currently supported) created with your solution root directory as the top-level. The grader will replace the spec files will fresh copies and will perform a test with a different test.txt.</p>
-<pre class="text"><code>--- student-start  
-  |-- .rspec (important hidden file)
-  |-- module2_assignment.rb
-  |-- solution.rb
-  |-- spec
-  |   |-- line_analyzer_spec.rb
-  |   |-- solution_spec.rb
-  |   `-- spec_helper.rb
-  `-- test.txt</code></pre>
-<h4 id="updated-2015-09-19">Updated: 2015-09-19</h4>
+<pre class="text"><code>|-- module2_assignment.rb
+`-- solution.rb</code></pre>
+<h4 id="updated-2015-10-10a">Updated: 2015-10-10a</h4>

@@ -65,31 +65,19 @@ class Solution
     
     @highest_count_words_across_lines = []
 		
-		analyzers.each_with_index do |analyzer, line_number|
-    	if analyzers[line_number].highest_wf_count == self.highest_count_across_lines
-    		 	
-        	@highest_count_words_across_lines << analyzer.highest_wf_words
-      	
-      	end
-    	end
+    analyzers.each_with_index do |analyzer, line_number|
+      if analyzers[line_number].highest_wf_count == self.highest_count_across_lines
+          
+        @highest_count_words_across_lines << analyzers[line_number]
+      end
     end
-
-
-    # analyzers.each_with_index do |analyzer, line_number|
-    # 	if analyzers[line_number].highest_wf_count == self.highest_count_across_lines
-    # 		analyzers[line_number].highest_wf_words.each do |word|
-        	
-    #     	@highest_count_words_across_lines << word
-    #   	end
-    # 	end
-    # end
 
   end
 
   def print_highest_word_frequency_across_lines()
     puts "The following words have the highest word frequency per line:"
-    puts "#{self.highest_count_words_across_lines.to_s}"
-    puts "#{}#{}"
+    puts "#{self.analyzers[0].highest_wf_words} (appears on line ##{self.analyzers[0].line_number})"
+    puts "#{self.analyzers[2].highest_wf_words} (appear2 on line ##{self.analyzers[2].line_number})"
   end
  
 
