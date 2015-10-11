@@ -64,15 +64,25 @@ class Solution
     self.highest_count_across_lines = highest_wf
     
     @highest_count_words_across_lines = []
-
-    analyzers.each_with_index do |analyzer, line_number|
+		
+		analyzers.each_with_index do |analyzer, line_number|
     	if analyzers[line_number].highest_wf_count == self.highest_count_across_lines
-    		analyzers[line_number].highest_wf_words.each do |word|
-        	
-        	@highest_count_words_across_lines << word
+    		 	
+        	@highest_count_words_across_lines << analyzer.highest_wf_words
+      	
       	end
     	end
     end
+
+
+    # analyzers.each_with_index do |analyzer, line_number|
+    # 	if analyzers[line_number].highest_wf_count == self.highest_count_across_lines
+    # 		analyzers[line_number].highest_wf_words.each do |word|
+        	
+    #     	@highest_count_words_across_lines << word
+    #   	end
+    # 	end
+    # end
 
   end
 
