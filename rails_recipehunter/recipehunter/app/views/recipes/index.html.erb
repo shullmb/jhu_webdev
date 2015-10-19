@@ -1,4 +1,4 @@
-<h1>Recipes#index</h1>
+<h1>Recipes</h1>
 
 <table>
 	<tr>
@@ -8,8 +8,8 @@
 	</tr>
 	<% @recipes.each do |recipe| %>
 		<tr>
-			<td><%= link_to(image_tag(recipe["image_url"]),recipe["f2f_url"]) %></td>
-			<td><%= link_to(recipe["title"],recipe["f2f_url"]) %></td>
+			<td><%= link_to(image_tag(recipe["image_url"]),recipe["f2f_url"], target: "blank") %></td>
+			<td><%=  link_to(sanitize(recipe["title"]), recipe["f2f_url"], target: "blank") %></td>
 			<td><%= recipe["social_rank"] %></td>
 		</tr>
 	<% end %>
