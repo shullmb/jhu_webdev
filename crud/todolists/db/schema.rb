@@ -26,19 +26,12 @@ ActiveRecord::Schema.define(version: 20151102015243) do
     t.date     "due_date"
     t.string   "title"
     t.text     "description"
-    t.boolean  "completed", default: false
+    t.boolean  "completed"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
 
   create_table "todo_lists", force: :cascade do |t|
-    t.string   "list_name"
-    t.date     "list_due_date"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "todolists", force: :cascade do |t|
     t.string   "list_name"
     t.date     "list_due_date"
     t.datetime "created_at",    null: false
