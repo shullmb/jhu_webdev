@@ -19,6 +19,10 @@
   <strong>Completed:</strong>
   <%= @todo_item.completed %>
 </p>
+<p>
+  <strong>Member of:</strong>
+  <%= @todo_list.list_name %>
+</p>
 
-<%= link_to 'Edit', edit_todo_item_path(@todo_item) %> |
-<%= link_to 'Back', todo_items_path %>
+<%= link_to 'Edit', edit_todo_list_todo_item_path(@todo_list, @todo_item) %> |
+<%= link_to 'Back', @todo_list %>
